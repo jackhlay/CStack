@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <stdio.h>
+
 typedef struct{
 	int data;
 	struct node* next;
@@ -7,29 +10,30 @@ typedef struct{
 
 node* createNode(int d)
 {
-	node newNode = (node*)malloc(sizeof(node));
+	node* newNode = (node*)malloc(sizeof(node));
 	if(newNode == NULL){
 	return NULL;
 	}
 
 	newNode -> data = d;
-	newNode.next = NULL;
+	newNode->next = NULL;
 	return newNode;
 }
 
 int insertHead(node** head, int data)
 {
-	node* newNode = creadeNode(data);
+	node* newNode = createNode(data);
 	if(!newNode){
-		return NULL;
+		return -1;
 	}
 
 	if(*head == NULL){
-		*head  = newNode
+		*head = newNode;
+		return 0;
 	}
 
-	newNode.next => *head;
-	head = newNode;
+	newNode->next = *head;
+	*head = newNode;
 	return 0;
 }
 
@@ -42,14 +46,14 @@ int decap(node** head)
 }
 
 
-int isEmpty(node** Stack)
+int isEmpty(node** stack)
 {
 	return *stack == NULL;
 }
 
 void push(node** stack, int data)
 {
-	if(inserthead(stack, data)){
+	if(insertHead(stack, data)){
 		printf("STACK OVERFLOW SIR");
 	}
 }
@@ -59,4 +63,38 @@ int pop(node** stack)
 	if(isEmpty(stack)){
 		printf("Stack underflow (it's empty)");
 	}
+}
+
+int getTop(node** stack)
+{
+	if(!isEmpty(stack)){
+		return (*stack)->data;
+	}
+	else{return -1;}
+}
+
+
+int stackPrint(node** stack)
+{
+	node* temp = *stack;
+	while(temp != NULL){
+		printf("%d -> ", temp->data);
+		temp=temp->next;
+	}
+	printf("\n");
+}
+
+int main()
+{
+node* stack = NULL;
+
+push(&stack, 3);
+push(&stack, 1);
+push(&stack, 2);
+push(&stack, 3);
+push(&stack, 2);
+push(&stack, 0);
+push(&stack, 4);
+
+stackPrint(&stack);
 }

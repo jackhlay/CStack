@@ -8,14 +8,14 @@ typedef struct{
 }node;
 
 
-node* createNode(int d)
+node* createNode(int data)
 {
 	node* newNode = (node*)malloc(sizeof(node));
 	if(newNode == NULL){
 	return NULL;
 	}
 
-	newNode -> data = d;
+	newNode -> data = data;
 	newNode->next = NULL;
 	return newNode;
 }

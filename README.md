@@ -38,6 +38,7 @@ Prints the stack from top to bottom. (Ex: 4 -> 3 -> 0 -> ...)
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "stack.c"
 
 // Include stack functions here
 

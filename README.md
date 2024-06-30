@@ -6,7 +6,7 @@ It supports basic stack opearations like push, pop, getTop.
 # Functions  
   
 ## Utility Functions:  
-node* createNode(int data)  
+- node* createNode(int data)  
 Creates a new node with given data.
 
 ## General Use Functions  

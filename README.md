@@ -29,4 +29,30 @@ Removes and returns the top element from the stack.
 Returns the top element of the stack, but does not pop it off.  
   
 - int stackPrint(node** stack)  
-Prints the stack from top to bottom. (Ex: 4 -> 3 -> 0 -> ...)
+Prints the stack from top to bottom. (Ex: 4 -> 3 -> 0 -> ...)  
+
+
+# Example Implementattion  
+
+```C
+
+#include <stdio.h>
+#include <stdlib.h>
+
+// Include stack functions here
+
+int main() {
+    node* stack = NULL;
+
+    push(&stack, 10);
+    push(&stack, 20);
+    push(&stack, 30);
+
+    stackPrint(&stack);
+
+    pop(&stack);
+    stackPrint(&stack);
+
+    return 0;
+}
+```

@@ -63,7 +63,9 @@ int pop(node** stack)
 	if(isEmpty(stack)){
 		printf("Stack underflow (it's empty)");
 	}
+	int val = (*stack) -> data;
 	decap(stack);
+	return val;
 }
 
 int getTop(node** stack)
@@ -89,9 +91,9 @@ int main()
 {
 node* stack = NULL;
 
-push(&stack, 30);
-push(&stack, 20);
 push(&stack, 10);
+push(&stack, 20);
+push(&stack, 30);
 stackPrint(&stack);
 
 pop(&stack);

@@ -36,9 +36,7 @@ Prints the stack from top to bottom. (Ex: 4 -> 3 -> 0 -> ...)
 
 ```C
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "stack.c"
+#include "stack.h"
 
 
 int main() {
@@ -53,10 +51,12 @@ int main() {
     pop(&stack);
     stackPrint(&stack);
 
+    printf("\nTop value = %d\n", getTop(&stack));
     return 0;
 }
 //output:
 // 30 -> 20 -> 10 ->
 // 20 -> 10 ->
 
+// Top value = 20
 ```

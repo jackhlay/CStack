@@ -1,11 +1,4 @@
-#include <stdlib.h>
-#include <stdio.h>
-
-typedef struct{
-	int data;
-	struct node* next;
-
-}node;
+#include "stack.h"
 
 
 node* createNode(int data)
@@ -85,19 +78,4 @@ int stackPrint(node** stack)
 		temp=temp->next;
 	}
 	printf("\n");
-}
-
-int main()
-{
-node* stack = NULL;
-
-push(&stack, 10);
-push(&stack, 20);
-push(&stack, 30);
-stackPrint(&stack);
-
-pop(&stack);
-stackPrint(&stack);
-return 0;
-
 }

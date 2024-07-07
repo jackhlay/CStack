@@ -13,6 +13,9 @@ Creates a new node with given data.
 - int insertHead(node** head, int data)  
 Inserts a new node with data into the head of the stack.  
   
+- int stackLength(node* head)
+Returns the length of the stack.
+
 - int decap(node** head)  
 Removes the top node from the stack.  
   
@@ -41,12 +44,15 @@ Prints the stack from top to bottom. (Ex: 4 -> 3 -> 0 -> ...)
 
 int main() {
     node* stack = NULL;
+    printf("Stack Empty = %b\n", isEmpty(&stack));
 
     push(&stack, 10);
     push(&stack, 20);
     push(&stack, 30);
-
     stackPrint(&stack);
+
+    pritnf("\n Stack Length = %d, stackLength(stack));
+    printf("Stack Empty = %b\n", isEmpty(&stack));
 
     pop(&stack);
     stackPrint(&stack);
@@ -55,8 +61,14 @@ int main() {
     return 0;
 }
 //output:
-// 30 -> 20 -> 10 ->
-// 20 -> 10 ->
+Stack Empty = 1
+30 -> 20 -> 10 ->
 
-// Top value = 20
+Stack Length = 3
+Stack Empty = 0
+
+20 -> 10 ->
+
+Top value = 20
+
 ```

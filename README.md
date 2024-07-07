@@ -13,7 +13,7 @@ Creates a new node with given data.
 - int insertHead(node** head, int data)  
 Inserts a new node with data into the head of the stack.  
   
-- int stackLength(node* head)
+- int stackLength(node* head)  
 Returns the length of the stack.
 
 - int decap(node** head)  

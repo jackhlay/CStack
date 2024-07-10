@@ -5,11 +5,9 @@ It supports basic stack opearations like push, pop, getTop.
 
 # Functions  
   
-## Utility Functions:  
 - node* createNode(int data)  
 Creates a new node with given data.
 
-## General Use Functions  
 - int insertHead(node** head, int data)  
 Inserts a new node with data into the head of the stack.  
   
